@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import Teeth from './artifacts/contracts/Teeth.sol/Teeth.json'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { Container, Row, Col} from 'react-bootstrap'
+import Faucet from './components/Faucet.js'
 
 function App() {
+
+  const Token = Teeth;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Container>
+        <Row className='justify-content-md-center'>
+          <Col>
+          <div><Faucet tokenContract={Token}/></div>
+          </Col>
+          <Col>
+          <div>Send Teeth</div>
+          </Col>
+        </Row>
+      </Container>
+      
     </div>
   );
 }
